@@ -29,6 +29,12 @@ public class HomeFragment extends Fragment {
         Button btn = view.findViewById(R.id.button);
         btn.setOnClickListener(v -> {
             NavController controller = Navigation.findNavController(v);
+            // 自帶參數
+            Bundle bundle = new Bundle(); // 可以想成它是放變數的容器
+            bundle.putString("remote_name", "A01");
+            bundle.putInt("remote_age", 18);
+
+            // 導航
             controller.navigate(R.id.action_homeFragment_to_detailFragment);
         });
     }
