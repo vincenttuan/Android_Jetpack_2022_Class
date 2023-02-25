@@ -11,6 +11,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app_databinding" />
+            <option value="$PROJECT_DIR$/app_databinding_recyclerview" />
+            <option value="$PROJECT_DIR$/app_databinding_recyclerview_room" />
+            <option value="$PROJECT_DIR$/app_event_bus" />
             <option value="$PROJECT_DIR$/app_fcm" />
             <option value="$PROJECT_DIR$/app_fcm_console" />
             <option value="$PROJECT_DIR$/app_firebase" />
@@ -18,8 +22,14 @@
             <option value="$PROJECT_DIR$/app_layout_login" />
             <option value="$PROJECT_DIR$/app_lifecycle" />
             <option value="$PROJECT_DIR$/app_livedata" />
+            <option value="$PROJECT_DIR$/app_livedata_fragment" />
+            <option value="$PROJECT_DIR$/app_mvvm_student" />
+            <option value="$PROJECT_DIR$/app_nav" />
+            <option value="$PROJECT_DIR$/app_paging" />
+            <option value="$PROJECT_DIR$/app_paging_boundry" />
             <option value="$PROJECT_DIR$/app_retrofit" />
             <option value="$PROJECT_DIR$/app_room_dice" />
+            <option value="$PROJECT_DIR$/app_room_livedata_viewmodel" />
             <option value="$PROJECT_DIR$/app_saved_instance_state" />
             <option value="$PROJECT_DIR$/app_viewmodel" />
           </set>
