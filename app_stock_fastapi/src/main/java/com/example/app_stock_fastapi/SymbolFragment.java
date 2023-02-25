@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.app_stock_fastapi.api.Api;
 import com.example.app_stock_fastapi.api.RetrofitClient;
 import com.example.app_stock_fastapi.model.Stock;
+import com.example.app_stock_fastapi.service.StockService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,12 +23,12 @@ import retrofit2.Response;
 
 public class SymbolFragment extends Fragment {
     private Bundle bundle;
-    private Api api;
+    private StockService stockService;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bundle = getArguments();
-        api = RetrofitClient.getInstance().getApi();
+        stockService = new StockService();
     }
 
     @Override
@@ -45,19 +46,10 @@ public class SymbolFragment extends Fragment {
 
         String symbol = bundle.getString("symbol");
         tvSymbol.setText(symbol);
-
-        api.getSymbol(symbol).enqueue(new Callback<Stock>() {
-            @Override
-            public void onResponse(Call<Stock> call, Response<Stock> response) {
-                info.setText(response.body().toString()); // 得到 Json 資料
-                Log.i("stock", response.body().toString());
-            }
-
-            @Override
-            public void onFailure(Call<Stock> call, Throwable t) {
-                Log.i("stock", t.toString());
-            }
+        stockService.getSymbol(symbol, (stock) -> {
+            info.setText(stock.toString());
         });
+        Log.i("stock", "info: " + info.getText().toString());
 
     }
 }
