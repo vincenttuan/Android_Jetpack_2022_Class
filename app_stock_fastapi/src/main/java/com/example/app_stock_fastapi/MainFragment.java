@@ -11,6 +11,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 public class MainFragment extends Fragment {
 
@@ -24,6 +25,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        EditText et = view.findViewById(R.id.et);
 
         view.findViewById(R.id.iv).setOnClickListener(v -> {
             NavController controller = Navigation.findNavController(v);
@@ -34,6 +36,7 @@ public class MainFragment extends Fragment {
         view.findViewById(R.id.searchButton).setOnClickListener(v -> {
             NavController controller = Navigation.findNavController(v);
             Bundle bundle = new Bundle();
+            bundle.putString("symbol", et.getText().toString());
             controller.navigate(R.id.action_mainFragment_to_symbolFragment, bundle);
         });
 

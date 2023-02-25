@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:gravity="center"
-        android:layout_above="@+id/et"
+        android:layout_above="@+id/tv_symbol"
         android:text="@string/symbol" />
 
     <TextView
-        android:id="@+id/et"
+        android:id="@+id/tv_symbol"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_below="@id/et"
+        android:layout_below="@id/tv_symbol"
         android:gravity="center"
         android:hint="@string/info"
         android:textSize="30dp" />
