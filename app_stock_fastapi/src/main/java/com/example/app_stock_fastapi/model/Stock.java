@@ -121,4 +121,23 @@ public class Stock {
     public void setPrices(List<String> prices) {
         this.prices = prices;
     }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "id=" + id +
+                ", symbol='" + symbol + '\'' +
+                ", best_buy_1=" + best_buy_1 +
+                ", best_buy_2=" + best_buy_2 +
+                ", best_buy_3=" + best_buy_3 +
+                ", best_buy_4=" + best_buy_4 +
+                ", best_sell_1=" + best_sell_1 +
+                ", best_sell_2=" + best_sell_2 +
+                ", best_sell_3=" + best_sell_3 +
+                ", best_sell_4=" + best_sell_4 +
+                ", create_time=" + create_time +
+                ", transaction_time=" + transaction_time +
+                ", prices=" + prices +
+                '}';
+    }
 }
