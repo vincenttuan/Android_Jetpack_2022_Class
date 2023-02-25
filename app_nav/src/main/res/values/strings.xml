@@ -5,4 +5,6 @@
     <string name="home">Home</string>
     <string name="detail_button">Detail Button</string>
     <string name="detail">Detail</string>
+    <string name="info">Info</string>
+    <string name="info_button">Info Button</string>
 </resources>
