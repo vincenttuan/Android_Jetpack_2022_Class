@@ -25,6 +25,12 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        view.findViewById(R.id.iv).setOnClickListener(v -> {
+            NavController controller = Navigation.findNavController(v);
+            Bundle bundle = new Bundle();
+            controller.navigate(R.id.action_mainFragment_to_infoFragment, bundle);
+        });
+
         view.findViewById(R.id.searchButton).setOnClickListener(v -> {
             NavController controller = Navigation.findNavController(v);
             Bundle bundle = new Bundle();
