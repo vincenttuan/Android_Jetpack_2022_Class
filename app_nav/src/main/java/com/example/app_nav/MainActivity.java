@@ -15,8 +15,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // 因為 activity_main 裡面放的是 NavHostFragment
         // 所以要先得到 NavHostFragment 再取 NavController
-        //NavHostFragment navHostFragment = (NavHostFragment)getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
-        //controller = navHostFragment.getNavController();
-        //NavigationUI.setupActionBarWithNavController(this, controller);
+        NavHostFragment navHostFragment = (NavHostFragment)getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+        controller = navHostFragment.getNavController();
+        NavigationUI.setupActionBarWithNavController(this, controller);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        return controller.navigateUp();
     }
 }
