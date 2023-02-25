@@ -50,6 +50,7 @@ public class SymbolFragment extends Fragment {
             @Override
             public void onResponse(Call<Stock> call, Response<Stock> response) {
                 info.setText(response.body().toString()); // 得到 Json 資料
+                Log.i("stock", response.body().toString());
             }
 
             @Override
