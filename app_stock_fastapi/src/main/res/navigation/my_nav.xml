@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.app_stock_fastapi.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.app_stock_fastapi.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_symbolFragment"
+            app:destination="@id/symbolFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_symbolListFragment"
+            app:destination="@id/symbolListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.app_stock_fastapi.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/symbolFragment"
+        android:name="com.example.app_stock_fastapi.SymbolFragment"
+        android:label="fragment_symbol"
+        tools:layout="@layout/fragment_symbol" />
+    <fragment
+        android:id="@+id/symbolListFragment"
+        android:name="com.example.app_stock_fastapi.SymbolListFragment"
+        android:label="fragment_symbol_list"
+        tools:layout="@layout/fragment_symbol_list" >
+        <action
+            android:id="@+id/action_symbolListFragment_to_symbolFragment"
+            app:destination="@id/symbolFragment" />
+    </fragment>
+</navigation>
