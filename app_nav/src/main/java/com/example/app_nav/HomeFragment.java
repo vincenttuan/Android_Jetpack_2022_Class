@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.app_nav.model.User;
+
 // Fragment 生命週期
 // https://img-blog.csdnimg.cn/img_convert/8998b924006e95802ef00a14f98870aa.png
 public class HomeFragment extends Fragment {
@@ -33,9 +35,12 @@ public class HomeFragment extends Fragment {
             Bundle bundle = new Bundle(); // 可以想成它是放變數的容器
             bundle.putString("remote_name", "A01");
             bundle.putInt("remote_age", 18);
-
-            // 導航
-            controller.navigate(R.id.action_homeFragment_to_detailFragment);
+            User user = new User("B02", 20);
+            bundle.putSerializable("user", user);
+            // 導航(不帶參數)
+            //controller.navigate(R.id.action_homeFragment_to_detailFragment);
+            // 導航(帶參數)
+            controller.navigate(R.id.action_homeFragment_to_detailFragment, bundle);
         });
     }
 }
