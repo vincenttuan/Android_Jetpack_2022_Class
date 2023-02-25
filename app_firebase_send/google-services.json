@@ -1,0 +1,201 @@
+{
+  "project_info": {
+    "project_number": "645700661880",
+    "firebase_url": "https://iot-pcschool.firebaseio.com",
+    "project_id": "iot-pcschool",
+    "storage_bucket": "iot-pcschool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645700661880:android:bc41fd0926f49f5daaf38d",
+        "android_client_info": {
+          "package_name": "com.example.app_fcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645700661880-vtv6brv2bnh76d9go5e4vmtn1ilhsnk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEeEHKZeSLBBxiJz4fpLKNjlQ4FfMpMQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645700661880-kdqmdgl2ir7nlgopio9etgoqef0sng3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645700661880:android:9cfc9e0a0cab0ef3aaf38d",
+        "android_client_info": {
+          "package_name": "com.example.app_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645700661880-vtv6brv2bnh76d9go5e4vmtn1ilhsnk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEeEHKZeSLBBxiJz4fpLKNjlQ4FfMpMQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645700661880-kdqmdgl2ir7nlgopio9etgoqef0sng3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645700661880:android:d69d2194b9d44672aaf38d",
+        "android_client_info": {
+          "package_name": "com.example.app_firebase_send"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645700661880-vtv6brv2bnh76d9go5e4vmtn1ilhsnk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEeEHKZeSLBBxiJz4fpLKNjlQ4FfMpMQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645700661880-kdqmdgl2ir7nlgopio9etgoqef0sng3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645700661880:android:86dd1b16924b8190aaf38d",
+        "android_client_info": {
+          "package_name": "com.iot.vin.pcschool.study.app2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645700661880-b7a57l1p5nkvnltgh9fcs9oo02ipfr6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iot.vin.pcschool.study.app2",
+            "certificate_hash": "96209898a9ac4f4331e842f24f8d741ec7e89e6b"
+          }
+        },
+        {
+          "client_id": "645700661880-vtv6brv2bnh76d9go5e4vmtn1ilhsnk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEeEHKZeSLBBxiJz4fpLKNjlQ4FfMpMQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645700661880-kdqmdgl2ir7nlgopio9etgoqef0sng3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645700661880:android:4925cca4e8cc60a6aaf38d",
+        "android_client_info": {
+          "package_name": "com.study.app_fcm_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645700661880-vtv6brv2bnh76d9go5e4vmtn1ilhsnk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEeEHKZeSLBBxiJz4fpLKNjlQ4FfMpMQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645700661880-kdqmdgl2ir7nlgopio9etgoqef0sng3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645700661880:android:365eef746cba5d84aaf38d",
+        "android_client_info": {
+          "package_name": "vin.tuan.iot.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645700661880-e6fciqfij9o83g18ct4mhe9m1k8hvshk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vin.tuan.iot.demo",
+            "certificate_hash": "96209898a9ac4f4331e842f24f8d741ec7e89e6b"
+          }
+        },
+        {
+          "client_id": "645700661880-vtv6brv2bnh76d9go5e4vmtn1ilhsnk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEeEHKZeSLBBxiJz4fpLKNjlQ4FfMpMQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645700661880-kdqmdgl2ir7nlgopio9etgoqef0sng3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
