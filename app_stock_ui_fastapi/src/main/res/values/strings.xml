@@ -14,4 +14,9 @@
     <string name="taiwan_taipei">Taiwan Taipei</string>
     <string name="_10am_06pm">10am~06pm</string>
     <string name="chatgpt">ChatGPT</string>
+    <string name="holder">觀望</string>
+    <string name="sellout">賣出</string>
+    <string name="buyin">買進</string>
+    <string name="best_4_points">Best 4 Points</string>
+    <string name="_0">0</string>
 </resources>

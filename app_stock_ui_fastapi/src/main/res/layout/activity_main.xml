@@ -59,7 +59,7 @@
                 android:id="@+id/textViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/shot_views"
+                android:text="@string/best_4_points"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_14ssp"
                 android:textStyle="bold"
@@ -95,14 +95,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:text="@string/clients"
+                    android:text="@string/holder"
                     android:textColor="@color/secondary_text"
                     android:textSize="@dimen/_10sdp" />
 
                 <TextView
+                    android:id="@+id/tv_holder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/_395"
+                    android:text="@string/_0"
                     android:textColor="@color/primary_text"
                     android:textSize="@dimen/_16sdp" />
 
@@ -128,14 +129,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:text="@string/impacked"
+                    android:text="@string/sellout"
                     android:textColor="@color/secondary_text"
                     android:textSize="@dimen/_10sdp" />
 
                 <TextView
+                    android:id="@+id/tv_sell"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/_157"
+                    android:text="@string/_0"
                     android:textColor="@color/primary_text"
                     android:textSize="@dimen/_16sdp" />
 
@@ -161,14 +163,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:text="@string/following"
+                    android:text="@string/buyin"
                     android:textColor="@color/secondary_text"
                     android:textSize="@dimen/_10sdp" />
 
                 <TextView
+                    android:id="@+id/tv_buy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/_820"
+                    android:text="@string/_0"
                     android:textColor="@color/primary_text"
                     android:textSize="@dimen/_16sdp" />
 
