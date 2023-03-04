@@ -40,6 +40,6 @@ dependencies {
 
     // 提供新尺寸單位的 android 庫: sdp（可縮放 dp）
     // 此尺寸單位隨屏幕尺寸縮放。它可以幫助 Android 開發人員支持多屏幕。
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'  // 調整View大小
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'  // 調整字型大小
 }

@@ -13,4 +13,5 @@
     <string name="this_is_a_demo">This is a demo</string>
     <string name="taiwan_taipei">Taiwan Taipei</string>
     <string name="_10am_06pm">10am~06pm</string>
+    <string name="chatgpt">ChatGPT</string>
 </resources>
