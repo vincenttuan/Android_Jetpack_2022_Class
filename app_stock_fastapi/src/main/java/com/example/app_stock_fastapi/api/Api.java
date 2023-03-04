@@ -16,4 +16,7 @@ public interface Api {
     @GET("bfp/query/all")
     Call<List<Stock>> queryAll();
 
+    @GET("chatgpt/get/twii")
+    Call<String> getTWII();
+
 }

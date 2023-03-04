@@ -11,4 +11,6 @@
     <string name="_2330">2330</string>
     <string name="info">info</string>
     <string name="all_symbols">ALL Symbols</string>
+    <string name="chatgpt_twii">ChatGPT TWII</string>
+    <string name="chatgpt_result">ChatGPT Result</string>
 </resources>

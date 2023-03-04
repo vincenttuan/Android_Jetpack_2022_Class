@@ -45,5 +45,11 @@ public class MainFragment extends Fragment {
             Bundle bundle = new Bundle();
             controller.navigate(R.id.action_mainFragment_to_symbolListFragment, bundle);
         });
+
+        view.findViewById(R.id.chatgptButton).setOnClickListener(v -> {
+            NavController controller = Navigation.findNavController(v);
+            Bundle bundle = new Bundle();
+            controller.navigate(R.id.action_mainFragment_to_chatGPTFragment, bundle);
+        });
     }
 }

@@ -47,4 +47,12 @@
         android:layout_centerInParent="true"
         android:text="@string/query_all" />
 
+    <Button
+        android:id="@+id/chatgptButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/queryButton"
+        android:layout_centerInParent="true"
+        android:text="@string/chatgpt_twii" />
+
 </RelativeLayout>
