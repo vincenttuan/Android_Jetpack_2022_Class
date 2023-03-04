@@ -51,4 +51,18 @@ public class StockService {
         });
     }
 
+    public void getTWII(Consumer<String> consumer) {
+        api.getTWII().enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                consumer.accept(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.i("stock", t.toString());
+            }
+        });
+    }
+
 }
