@@ -32,6 +32,7 @@
             <option value="$PROJECT_DIR$/app_room_livedata_viewmodel" />
             <option value="$PROJECT_DIR$/app_saved_instance_state" />
             <option value="$PROJECT_DIR$/app_stock_fastapi" />
+            <option value="$PROJECT_DIR$/app_stock_ui_fastapi" />
             <option value="$PROJECT_DIR$/app_ui_dashboard" />
             <option value="$PROJECT_DIR$/app_viewmodel" />
           </set>
