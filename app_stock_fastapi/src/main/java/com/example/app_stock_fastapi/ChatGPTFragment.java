@@ -1,11 +1,13 @@
 package com.example.app_stock_fastapi;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.health.ProcessHealthStats;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,8 +39,14 @@ public class ChatGPTFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         TextView result = view.findViewById(R.id.tv_result);
+        ProgressDialog progressDialog = new ProgressDialog(view.getContext());
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setMessage(getString(R.string.loading));
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         stockService.getTWII((data) -> {
             result.setText(data);
+            progressDialog.dismiss();
         });
         Log.i("stock", "info: " + result.getText().toString());
 

@@ -13,4 +13,5 @@
     <string name="all_symbols">ALL Symbols</string>
     <string name="chatgpt_twii">ChatGPT TWII</string>
     <string name="chatgpt_result">ChatGPT Result</string>
+    <string name="loading">Loading</string>
 </resources>
