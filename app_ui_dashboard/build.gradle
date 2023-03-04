@@ -37,4 +37,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // 提供新尺寸單位的 android 庫: sdp（可縮放 dp）
+    // 此尺寸單位隨屏幕尺寸縮放。它可以幫助 Android 開發人員支持多屏幕。
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
 }
