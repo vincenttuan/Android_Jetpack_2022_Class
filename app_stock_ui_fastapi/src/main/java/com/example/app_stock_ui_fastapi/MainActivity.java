@@ -2,6 +2,8 @@ package com.example.app_stock_ui_fastapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -18,7 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView tvHolder, tvSell, tvBuy;
+    private TextView tvHolder, tvSell, tvBuy, tvChatGPT;
     private Context context;
     private Api api;
     private List<Stock> stocks;
@@ -35,7 +37,34 @@ public class MainActivity extends AppCompatActivity {
         tvHolder = findViewById(R.id.tv_holder);
         tvSell = findViewById(R.id.tv_sell);
         tvBuy = findViewById(R.id.tv_buy);
-         // 初始抓取觀望,賣出與買進的股票數量
+        tvChatGPT = findViewById(R.id.tv_chatgpt);
+
+        // 事件註冊
+        tvChatGPT.setOnClickListener(view -> {
+            ProgressDialog progressDialog = new ProgressDialog(view.getContext());
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressDialog.setMessage(getString(R.string.loading));
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+            api.getTWII().enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    progressDialog.dismiss();
+                    AlertDialog dialog = new AlertDialog.Builder(context)
+                            .setTitle("ChatGPT 明日大盤指數建議")
+                            .setMessage(response.body())
+                            .create();
+                    dialog.show();
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+
+                }
+            });
+        });
+
+        // 初始抓取觀望,賣出與買進的股票數量
         api.queryAll().enqueue(new Callback<List<Stock>>() {
             @Override
             public void onResponse(Call<List<Stock>> call, Response<List<Stock>> response) {
