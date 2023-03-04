@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.app_stock_ui_fastapi'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.app_stock_ui_fastapi"
+        minSdk 27
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // 提供新尺寸單位的 android 庫: sdp（可縮放 dp）
+    // 此尺寸單位隨屏幕尺寸縮放。它可以幫助 Android 開發人員支持多屏幕。
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'  // 調整View大小
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'  // 調整字型大小
+
+    // 圓形的 ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    // picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // OKHTTP
+    implementation 'com.squareup.okhttp3:okhttp:3.3.1'
+}
