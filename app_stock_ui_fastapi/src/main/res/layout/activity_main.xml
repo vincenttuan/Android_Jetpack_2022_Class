@@ -198,13 +198,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/item" />
-
-            <include layout="@layout/item" />
-
-            <include layout="@layout/item" />
-
-            <include layout="@layout/item" />
+            <ListView
+                android:id="@+id/list_view"
+                tools:listitem="@layout/item"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
