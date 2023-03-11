@@ -1,5 +1,7 @@
 package com.example.app_stock_ui_fastapi.util;
 
+import com.example.app_stock_ui_fastapi.model.Stock;
+
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.TimeUnit;
@@ -43,5 +45,15 @@ public class Utils {
 
         }
         return null;
+    }
+
+    public String buySellWAIT(Stock stock) {
+        if(stock.getBest_buy_1() + stock.getBest_buy_2() + stock.getBest_buy_3() + stock.getBest_buy_4() > stock.getBest_sell_1() + stock.getBest_sell_2() + stock.getBest_sell_3() + stock.getBest_sell_4()) {
+            return "BUY";
+        } else if(stock.getBest_buy_1() + stock.getBest_buy_2() + stock.getBest_buy_3() + stock.getBest_buy_4() < stock.getBest_sell_1() + stock.getBest_sell_2() + stock.getBest_sell_3() + stock.getBest_sell_4()) {
+            return "SELL";
+        }
+        return "WAIT";
+
     }
 }

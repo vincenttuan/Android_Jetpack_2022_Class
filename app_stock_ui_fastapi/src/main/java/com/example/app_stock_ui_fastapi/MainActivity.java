@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("請輸入股票代號");
             EditText input = new EditText(context);
-            input.setText("2330");
+            input.setHint("請輸入股票代號");
             input.setInputType(InputType.TYPE_CLASS_NUMBER);
             input.setGravity(Gravity.CENTER);
             builder.setView(input);
@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 api.addSymbol(symbol).enqueue(new Callback<Stock>() {
                     @Override
                     public void onResponse(Call<Stock> call, Response<Stock> response) {
-                        Toast.makeText(context, response.body().toString(), Toast.LENGTH_SHORT).show();
+                        Stock stock = response.body();
+                        Toast.makeText(context, stock.getSymbol() + ": " + new Utils().buySellWAIT(stock), Toast.LENGTH_SHORT).show();
                         stockAdapter.setStockList(null);
                         stockAdapter.notifyDataSetChanged();
                         init();
