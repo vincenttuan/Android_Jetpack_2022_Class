@@ -14,6 +14,9 @@ public interface Api {
     @GET("bfp/get/{symbol}")
     Call<Stock> getSymbol(@Path("symbol") String symbol);
 
+    @GET("bfp/add/{symbol}")
+    Call<Stock> addSymbol(@Path("symbol") String symbol);
+
     @GET("bfp/query/all")
     Call<List<Stock>> queryAll();
 

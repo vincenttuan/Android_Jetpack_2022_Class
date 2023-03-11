@@ -82,10 +82,13 @@ public class MainActivity extends AppCompatActivity {
             // 設定 button
             builder.setPositiveButton("OK", (dialog, which) -> {
                 String symbol = input.getText().toString();
-                api.getSymbol(symbol).enqueue(new Callback<Stock>() {
+                api.addSymbol(symbol).enqueue(new Callback<Stock>() {
                     @Override
                     public void onResponse(Call<Stock> call, Response<Stock> response) {
                         Toast.makeText(context, response.body().toString(), Toast.LENGTH_SHORT).show();
+                        stockAdapter.setStockList(null);
+                        stockAdapter.notifyDataSetChanged();
+                        init();
                     }
 
                     @Override
