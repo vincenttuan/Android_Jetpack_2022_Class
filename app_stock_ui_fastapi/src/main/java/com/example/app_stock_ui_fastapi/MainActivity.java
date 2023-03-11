@@ -1,16 +1,21 @@
 package com.example.app_stock_ui_fastapi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.app_stock_ui_fastapi.adapter.StockAdapter;
 import com.example.app_stock_ui_fastapi.api.Api;
@@ -37,6 +42,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tvHolder, tvSell, tvBuy, tvChatGPT;
+    private AppCompatImageButton searchImageBtn;
     private ListView listView;
     private Context context;
     private Api api;
@@ -57,12 +63,52 @@ public class MainActivity extends AppCompatActivity {
         tvBuy = findViewById(R.id.tv_buy);
         tvChatGPT = findViewById(R.id.tv_chatgpt);
         listView = findViewById(R.id.list_view);
+        searchImageBtn = findViewById(R.id.search_image_btn);
 
         // 配置適配器
         stockAdapter = new StockAdapter(context);
         listView.setAdapter(stockAdapter);
 
         // 事件註冊
+        searchImageBtn.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("請輸入股票代號");
+            EditText input = new EditText(context);
+            input.setText("2330");
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            input.setGravity(Gravity.CENTER);
+            builder.setView(input);
+
+            // 設定 button
+            builder.setPositiveButton("OK", (dialog, which) -> {
+                String symbol = input.getText().toString();
+                api.getSymbol(symbol).enqueue(new Callback<Stock>() {
+                    @Override
+                    public void onResponse(Call<Stock> call, Response<Stock> response) {
+                        Toast.makeText(context, response.body().toString(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Stock> call, Throwable t) {
+                        Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            });
+
+            builder.setNegativeButton("Cancel", (dialog, which) -> {
+                dialog.cancel();
+            });
+
+            builder.setNeutralButton("Refresh", (dialog, which) -> {
+                stockAdapter.setStockList(null);
+                stockAdapter.notifyDataSetChanged();
+                init();
+            });
+
+            builder.show();
+
+        });
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
