@@ -6,8 +6,10 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.app_stock_ui_fastapi.adapter.StockAdapter;
 import com.example.app_stock_ui_fastapi.api.Api;
 import com.example.app_stock_ui_fastapi.api.RetrofitClient;
 import com.example.app_stock_ui_fastapi.model.Stock;
@@ -21,9 +23,11 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tvHolder, tvSell, tvBuy, tvChatGPT;
+    private ListView listView;
     private Context context;
     private Api api;
     private List<Stock> stocks;
+    private StockAdapter stockAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         tvSell = findViewById(R.id.tv_sell);
         tvBuy = findViewById(R.id.tv_buy);
         tvChatGPT = findViewById(R.id.tv_chatgpt);
+        listView = findViewById(R.id.list_view);
+
+        // 配置適配器
+        stockAdapter = new StockAdapter(context);
+        listView.setAdapter(stockAdapter);
 
         // 事件註冊
         tvChatGPT.setOnClickListener(view -> {
@@ -86,6 +95,22 @@ public class MainActivity extends AppCompatActivity {
                     tvHolder.setText(holders.size() + "");
                     tvSell.setText(sells.size() + "");
                     tvBuy.setText(buys.size() + "");
+
+                    // 註冊事件
+                    tvHolder.setOnClickListener((v) -> {
+                        stockAdapter.setStockList(holders);
+                        stockAdapter.notifyDataSetChanged();
+                    });
+
+                    tvSell.setOnClickListener((v) -> {
+                        stockAdapter.setStockList(sells);
+                        stockAdapter.notifyDataSetChanged();
+                    });
+
+                    tvBuy.setOnClickListener((v) -> {
+                        stockAdapter.setStockList(buys);
+                        stockAdapter.notifyDataSetChanged();
+                    });
                 }
             }
 

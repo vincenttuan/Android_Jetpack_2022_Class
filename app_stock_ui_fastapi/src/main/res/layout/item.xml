@@ -86,9 +86,9 @@
                 android:text="@string/taiwan_taipei"
                 android:textColor="@color/secondary_text"
                 android:textSize="@dimen/_10ssp"
-                app:layout_constraintBottom_toBottomOf="@id/imageLocation"
-                app:layout_constraintStart_toEndOf="@id/imageLocation"
-                app:layout_constraintTop_toTopOf="@id/imageLocation" />
+                app:layout_constraintBottom_toBottomOf="@id/chartImageView"
+                app:layout_constraintStart_toEndOf="@id/chartImageView"
+                app:layout_constraintTop_toTopOf="@id/chartImageView" />
 
             <TextView
                 android:id="@+id/textTime"
