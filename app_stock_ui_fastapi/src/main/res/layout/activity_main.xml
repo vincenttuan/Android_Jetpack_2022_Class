@@ -183,30 +183,22 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
         android:padding="@dimen/_16sdp"
-        android:scrollbars="none"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardHeader">
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/list_view"
+            tools:listitem="@layout/item"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent" />
 
-            <ListView
-                android:id="@+id/list_view"
-                tools:listitem="@layout/item"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </LinearLayout>
-
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
