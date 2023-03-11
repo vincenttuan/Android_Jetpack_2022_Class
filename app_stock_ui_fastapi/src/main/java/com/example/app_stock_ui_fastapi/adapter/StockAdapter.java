@@ -23,6 +23,10 @@ public class StockAdapter extends BaseAdapter {
         this.context = context;
     }
 
+    public void setStockList(List<Stock> stockList) {
+        this.stockList = stockList;
+    }
+
     @Override
     public int getCount() {
         return (stockList == null)?0:stockList.size();
