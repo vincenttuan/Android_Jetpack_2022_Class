@@ -6,6 +6,9 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -13,6 +16,7 @@ import com.example.app_stock_ui_fastapi.adapter.StockAdapter;
 import com.example.app_stock_ui_fastapi.api.Api;
 import com.example.app_stock_ui_fastapi.api.RetrofitClient;
 import com.example.app_stock_ui_fastapi.model.Stock;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,6 +53,25 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(stockAdapter);
 
         // 事件註冊
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                // 按下圖片
+                view.findViewById(R.id.chartImageView).setOnClickListener(v -> {
+                    Stock stock = stocks.get(position);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle(stock.getSymbol() + "股價走勢圖");
+                    ImageView imageView = new ImageView(context);
+                    String path = "https://54.199.175.248/bfp/chart/" + stock.getSymbol();
+                    Picasso.get().load(path).into(imageView);
+                    builder.setView(imageView);
+                    builder.show();
+                });
+                // 自動按下(一定要加)
+                view.findViewById(R.id.chartImageView).performClick();
+            }
+        });
+
         tvChatGPT.setOnClickListener(view -> {
             ProgressDialog progressDialog = new ProgressDialog(view.getContext());
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
