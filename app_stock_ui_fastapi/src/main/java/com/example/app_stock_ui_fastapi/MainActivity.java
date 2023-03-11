@@ -90,6 +90,18 @@ public class MainActivity extends AppCompatActivity {
                         stockAdapter.setStockList(null);
                         stockAdapter.notifyDataSetChanged();
                         init();
+                        //根據 buy, Sell, WAIT 自動按下對應 view 元件
+                        switch (new Utils().buySellWAIT(stock)) {
+                            case "BUY":
+                                findViewById(R.id.tv_buy).performClick();
+                                break;
+                            case "SELL":
+                                findViewById(R.id.tv_sell).performClick();
+                                break;
+                            case "WAIT":
+                                findViewById(R.id.tv_holder).performClick();
+                                break;
+                        }
                     }
 
                     @Override
