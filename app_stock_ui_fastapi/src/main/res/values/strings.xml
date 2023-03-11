@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ui_dashboard</string>
+    <string name="app_name">GPT股市預測</string>
     <string name="record">ChatGPT 股市預測</string>
     <string name="shot_views">Shot Views</string>
     <string name="more">more</string>
