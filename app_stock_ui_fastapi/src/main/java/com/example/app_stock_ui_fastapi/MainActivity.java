@@ -16,11 +16,21 @@ import com.example.app_stock_ui_fastapi.adapter.StockAdapter;
 import com.example.app_stock_ui_fastapi.api.Api;
 import com.example.app_stock_ui_fastapi.api.RetrofitClient;
 import com.example.app_stock_ui_fastapi.model.Stock;
+import com.example.app_stock_ui_fastapi.util.Utils;
+import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -63,7 +73,12 @@ public class MainActivity extends AppCompatActivity {
                     builder.setTitle(stock.getSymbol() + "股價走勢圖");
                     ImageView imageView = new ImageView(context);
                     String path = "https://54.199.175.248/bfp/chart/" + stock.getSymbol();
-                    Picasso.get().load(path).into(imageView);
+
+                    Picasso picasso = new Picasso.Builder(context)
+                            .downloader(new OkHttp3Downloader(new Utils().getUntrustOkHttpClient()))
+                            .build();
+
+                    picasso.load(path).into(imageView);
                     builder.setView(imageView);
                     builder.show();
                 });
