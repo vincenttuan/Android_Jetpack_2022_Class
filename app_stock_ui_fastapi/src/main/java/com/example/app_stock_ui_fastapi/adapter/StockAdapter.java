@@ -53,6 +53,7 @@ public class StockAdapter extends BaseAdapter {
             holder.textTitle = (TextView) convertView.findViewById(R.id.textTitle);
             holder.textlocation = (TextView) convertView.findViewById(R.id.textlocation);
             holder.textTime = (TextView) convertView.findViewById(R.id.textTime);
+            holder.textPrice = (TextView) convertView.findViewById(R.id.textPrice);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -67,7 +68,8 @@ public class StockAdapter extends BaseAdapter {
         } else {
             holder.textlocation.setText("WAIT");
         }
-        holder.textTime.setText("$" + stock.getPrices().get(stock.getPrices().size()-1));
+        holder.textTime.setText(stock.getTransaction_time().get(stock.getTransaction_time().size()-1));
+        holder.textPrice.setText("$" + stock.getPrices().get(stock.getPrices().size()-1));
         return convertView;
     }
 
@@ -76,5 +78,6 @@ public class StockAdapter extends BaseAdapter {
         TextView textTitle;
         TextView textlocation;
         TextView textTime;
+        TextView textPrice;
     }
 }
